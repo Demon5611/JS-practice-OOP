@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>65.03 Геттеры и сеттеры</title>
+</head>
+
+<body>
+    <script>
+        class Worker {
+            constructor(name, surname, rate, days) {
+                this._name = name;
+                this._surname = surname;
+                this._rate = rate;
+                this._days = days;
+            }
+            getName() {
+                return this._name;
+            }
+            getSurname() {
+                return this._surname;
+            }
+            getRate() {
+                return this._rate;
+            }
+            getDays() {
+                return this._days;
+            }
+            getSalary() {
+                return this._rate * this._days;
+            }
+            setRate(rate) {
+                this._rate = rate;
+            }
+            setDays(days) {
+                this._days = days;
+            }
+        }
+
+        let worker = new Worker('Иван', 'Иванов', 300, 31);
+        console.log(worker.getRate());
+        console.log(worker.getDays());
+        console.log(worker.getSalary());
+        worker.setRate(250);
+        worker.setDays(20);
+        console.log(worker.getRate());
+        console.log(worker.getSalary());
+    </script>
+</body>
+
+</html>
