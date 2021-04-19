@@ -19,13 +19,13 @@
 var elem = new Elem('селектор');
 
 elem.html('!'); //запишет в текст элемента '!' <br>
-elem.append('!'); //запишет в начало элемента '!'
-elem.prepend('!'); //запишет в конец элемента '!'
-elem.attr('class', 'www'); //запишет в атрибут class значение www
+elem.append('!'); //запишет в начало элемента '!'<br>
+elem.prepend('!'); //запишет в конец элемента '!'<br>
+elem.attr('class', 'www'); //запишет в атрибут class значение www<br>
 
 //Должны работать цепочки методов:
-elem.html('hello').append('!').prepend('!');
-elem.attr('class', 'www').attr('title', 'hello');
+elem.html('hello').append('!').prepend('!');<br>
+elem.attr('class', 'www').attr('title', 'hello');<br>
 
 2. Модифицируйте класс Elem из предыдущей задачи так, чтобы он мог работать не только с одним элементом, но и одновременно с группой, как это сделано в jQuery. Кроме того: реализуйте еще и метод each
 
