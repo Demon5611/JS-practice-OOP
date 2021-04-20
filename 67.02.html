@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>67.01</title>
+</head>
+
+<body>
+    <div class="test"></div>
+    <div class="test"></div>
+    <button></button>
+    <button></button>
+
+    <ul>
+        <li>eeee</li>
+        <li>hhhh</li>
+        <li>mmmm</li>
+    </ul>
+
+    <script>
+        class jQuery {
+            constructor(selector) {
+                this.container = document.querySelectorAll(selector);
+            }
+
+            html(text) {
+                for (let el of this.container) {
+                    el.innerHTML = text;
+                }
+                return this;
+            }
+
+            attr(name, value) {
+                for (let el of this.container) {
+                    el.setAttribute(name, value);
+                }
+                return this;
+            }
+            append(text) {
+                for (let el of this.container) {
+                    el.append(text);
+                }
+                return this;
+            }
+            prepend(text) {
+                for (let el of this.container) {
+                    el.prepend(text);
+                }
+                return this;
+            }
+
+            each(callback) {
+                let container = this.container;
+                for (let i = 0; i < container.length; i++) {
+                    callback.call(container[i], i, container[i]);
+                }
+                return this;
+            }
+        }
+
+        const $ = (selector) => new jQuery(selector);
+        $('div').html('HELLO!').attr('title', 'hello').append('*******').prepend('*******');
+
+        $('button').html('Send').attr('class', 'btn');
+        $('li').each(function (index) {
+            if (index == 0)
+                console.log(this.innerHTML);
+        });
+    </script>
+</body>
+
+</html>
