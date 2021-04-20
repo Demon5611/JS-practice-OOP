@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>67.03</title>
+</head>
+
+<body>
+    <script>
+        class Rectangle {
+            constructor(width, height) {
+                this.elem = document.createElement('div');
+                this.setWidth(width);
+                this.setHeight(height);
+                this.elem.style.border = '1px solid black';
+                document.body.append(this.elem);
+            }
+            setWidth(width) {
+                this.elem.style.width = width + 'px';
+                return this;
+            }
+            setHeight(height) {
+                this.elem.style.height = height + 'px';
+                return this;
+            }
+            getWidth() {
+                return parseInt(this.elem.style.width);
+            }
+            getHeight() {
+                return parseInt(this.elem.style.height);
+            }
+        }
+
+        let elem = new Rectangle(0, 0);
+        elem.setWidth(300).setHeight(200);
+        console.log(elem.getWidth());
+        console.log(elem.getHeight());
+    </script>
+</body>
+
+</html>
